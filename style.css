@@ -1,113 +1,280 @@
+/* Railway Ticket Counter System */
+/* Main CSS Stylesheet */
+
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #eef3f8;
-    color: #222;
+html {
+    scroll-behavior: smooth;
 }
 
-header {
-    background: #123b63;
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f1f5f9;
+    color: #1e293b;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* Header */
+
+.header {
+    background: linear-gradient(135deg, #123b63, #176b87);
     color: white;
     text-align: center;
-    padding: 25px 15px;
+    padding: 35px 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
 }
 
-header h1 {
-    margin: 0 0 10px;
+.header h1 {
+    font-size: 32px;
+    margin-bottom: 8px;
+    line-height: 1.3;
 }
 
-header p {
-    margin: 0;
+.header p {
+    font-size: 16px;
+    color: #e0f2fe;
 }
+
+/* Main Layout */
 
 .container {
-    width: 90%;
-    max-width: 900px;
-    margin: 30px auto;
+    width: 92%;
+    max-width: 1000px;
+    margin: 35px auto;
     display: grid;
-    grid-template-columns: 1.3fr 1fr;
-    gap: 20px;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 25px;
+    align-items: start;
 }
+
+/* Cards */
 
 .ticket-card,
 .info-card {
-    background: white;
+    background: #ffffff;
     padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    border-radius: 14px;
+    box-shadow: 0 5px 20px rgba(15, 23, 42, 0.08);
+    border: 1px solid #e2e8f0;
 }
 
-h2 {
+.ticket-card h2,
+.info-card h2 {
     color: #123b63;
+    font-size: 23px;
+    margin-bottom: 22px;
+    line-height: 1.4;
 }
+
+/* Form Labels */
 
 label {
     display: block;
-    margin-top: 15px;
+    font-size: 15px;
     font-weight: bold;
+    color: #334155;
+    margin: 16px 0 7px;
 }
+
+/* Input Fields */
 
 input {
+    display: block;
     width: 100%;
-    padding: 12px;
-    margin-top: 7px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
+    min-width: 0;
+    padding: 12px 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 7px;
     font-size: 16px;
+    font-family: inherit;
+    background: #ffffff;
+    color: #1e293b;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
 }
 
+input:focus {
+    border-color: #167dba;
+    box-shadow: 0 0 0 3px rgba(22, 125, 186, 0.12);
+}
+
+/* Calculate Button */
+
 button {
+    display: block;
     width: 100%;
-    padding: 13px;
-    margin-top: 20px;
+    padding: 14px;
+    margin-top: 24px;
     background: #167d55;
-    color: white;
+    color: #ffffff;
     border: none;
-    border-radius: 6px;
+    border-radius: 8px;
     font-size: 16px;
+    font-weight: bold;
+    font-family: inherit;
     cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
 }
 
 button:hover {
     background: #105d3f;
 }
 
+button:active {
+    transform: scale(0.98);
+}
+
+/* Ticket Result */
+
 .result {
-    margin-top: 20px;
-    padding: 15px;
+    margin-top: 25px;
+    padding: 18px;
     background: #edf8f1;
-    border-radius: 8px;
+    border: 1px solid #c5e8d1;
+    border-radius: 10px;
     overflow-wrap: anywhere;
 }
 
 .result h3 {
     color: #167d55;
+    font-size: 20px;
+    margin-bottom: 12px;
 }
 
-.info-card p {
-    padding: 10px;
-    background: #f2f6fa;
-    border-radius: 5px;
+.result p {
+    margin: 8px 0;
+    font-size: 15px;
 }
 
-footer {
-    text-align: center;
+/* Ticket Information */
+
+.info-card {
+    background: #ffffff;
+}
+
+.info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 13px;
+    margin-bottom: 12px;
+    background: #f1f6fb;
+    border: 1px solid #e2eaf2;
+    border-radius: 8px;
+    font-size: 15px;
+    overflow-wrap: anywhere;
+}
+
+.info-item:last-child {
+    margin-bottom: 0;
+}
+
+/* Footer */
+
+.footer {
+    margin-top: 40px;
+    padding: 22px 15px;
     background: #123b63;
-    color: white;
-    padding: 15px;
-    margin-top: 30px;
+    color: #ffffff;
+    text-align: center;
 }
 
-@media (max-width: 650px) {
+.footer p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+/* Tablet Layout */
+
+@media (max-width: 768px) {
     .container {
         grid-template-columns: 1fr;
+        width: 92%;
+        max-width: 550px;
+        margin: 25px auto;
+        gap: 20px;
     }
 
-    header h1 {
-        font-size: 24px;
+    .header {
+        padding: 28px 15px;
+    }
+
+    .header h1 {
+        font-size: 28px;
+    }
+
+    .ticket-card,
+    .info-card {
+        padding: 22px;
+    }
+}
+
+/* Mobile Layout */
+
+@media (max-width: 480px) {
+    .header {
+        padding: 24px 12px;
+    }
+
+    .header h1 {
+        font-size: 25px;
+    }
+
+    .header p {
+        font-size: 14px;
+    }
+
+    .container {
+        width: 94%;
+        margin: 20px auto;
+        gap: 18px;
+    }
+
+    .ticket-card,
+    .info-card {
+        padding: 18px;
+        border-radius: 11px;
+    }
+
+    .ticket-card h2,
+    .info-card h2 {
+        font-size: 20px;
+        margin-bottom: 18px;
+    }
+
+    label {
+        font-size: 14px;
+    }
+
+    input {
+        padding: 12px;
+        font-size: 16px;
+    }
+
+    button {
+        padding: 13px;
+        font-size: 15px;
+    }
+
+    .result {
+        padding: 14px;
+    }
+
+    .result h3 {
+        font-size: 18px;
+    }
+
+    .result p,
+    .info-item {
+        font-size: 14px;
+    }
+
+    .footer p {
+        font-size: 12px;
     }
 }
