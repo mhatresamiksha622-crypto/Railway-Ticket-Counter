@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Railway Ticket Counter</title>
+
+    <link rel="stylesheet" href="Style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>🚆 Railway Ticket Counter</h1>
+        <p>Platform Ticket Booking System</p>
+    </header>
+
+    <main class="container">
+
+        <section class="ticket-card">
+
+            <h2>Book Your Platform Ticket</h2>
+
+            <label for="passenger">Passenger Name</label>
+            <input
+                type="text"
+                id="passenger"
+                placeholder="Enter passenger name"
+            >
+
+            <label for="quantity">Number of Tickets</label>
+            <input
+                type="number"
+                id="quantity"
+                min="1"
+                max="99"
+                value="1"
+            >
+
+            <label for="payment">Payment Amount (₹)</label>
+            <input
+                type="number"
+                id="payment"
+                min="0"
+                placeholder="Enter payment amount"
+            >
+
+            <button onclick="calculateTicket()">
+                Calculate Fare
+            </button>
+
+            <div class="result" id="result">
+                <h3>Ticket Summary</h3>
+                <p>Enter details to calculate your fare.</p>
+            </div>
+
+        </section>
+
+        <section class="info-card">
+
+            <h2>Ticket Information</h2>
+
+            <p>🎫 Ticket Price: ₹25 per ticket</p>
+            <p>👥 Multiple tickets available</p>
+            <p>💰 Automatic fare calculation</p>
+            <p>🖥️ 8085 Microprocessor Project</p>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Railway Ticket Counter System | GNU 8085 Project</p>
+    </footer>
+
+    <script src="Script.js"></script>
+
+</body>
+</html>
